@@ -1,0 +1,105 @@
+// Variabelen
+$primary-color: #4287f5;
+$secondary-color: #333;
+$font-family: Arial, sans-serif;
+
+// Namespace
+.namespace {
+  font-family: $font-family;
+  color: $primary-color;
+}
+
+// Geneste elementen
+.header {
+  background-color: $secondary-color;
+  padding: 20px;
+
+  nav {
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        margin-right: 10px;
+
+        a {
+          text-decoration: none;
+          color: $primary-color;
+        }
+      }
+    }
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+}
+
+// Operations
+$base-padding: 10px;
+$padding-increase: 5px;
+
+// @media voor mobile & tablet versie
+@media (max-width: 768px) {
+  .header {
+    padding: $base-padding;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header {
+    padding: $base-padding + $padding-increase;
+  }
+}
+
+// @extend
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.primary-button {
+  @extend .button;
+  background-color: $primary-color;
+}
+
+// @if, @elseif, @else
+@mixin text-style($size) {
+  @if $size == large {
+    font-size: 18px;
+  } @else if $size == medium {
+    font-size: 16px;
+  } @else {
+    font-size: 14px;
+  }
+}
+
+// @for
+@for $i from 1 through 3 {
+  .item-#{$i} {
+    width: 100px * $i;
+  }
+}
+
+// @each
+$backgrounds: ("primary": #4287f5, "secondary": #333, "accent": #ff9800);
+
+@each $key, $color in $backgrounds {
+  .bg-#{$key} {
+    background-color: $color;
+  }
+}
+
+// @while
+$i: 0;
+@while $i < 5 {
+  .iteration-#{$i} {
+    width: 20px * $i;
+  }
+  $i: $i + 1;
+}
