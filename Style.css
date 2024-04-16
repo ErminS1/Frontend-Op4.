@@ -1,33 +1,37 @@
-/* Globale stijlen */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f8f8;
-  color: #333;
-  margin: 0;
-  padding: 0;
+/* Variabelen */
+/* Box stijlen */
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Toevoeging van schaduw */
 }
 
+/* Nesting van elementen */
 header {
-  background-color: #164f8b;
+  background-color: #007bff;
   color: #fff;
   padding: 20px;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Toevoeging van schaduw */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-nav ul {
+header nav ul {
   list-style: none;
   padding: 0;
 }
-
-nav ul li {
+header nav ul li {
   display: inline;
   margin-right: 20px;
 }
-
-nav ul li a {
+header nav ul li a {
   color: #fff;
   text-decoration: none;
+}
+header nav ul li a:hover {
+  text-decoration: underline;
 }
 
 main {
@@ -39,40 +43,91 @@ footer {
   color: #fff;
   padding: 20px;
   text-align: center;
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Toevoeging van schaduw */
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Stijlen voor specifieke elementen */
-h1 {
-  font-size: 32px;
-  margin-bottom: 20px;
+/* Namespace */
+.namespace {
+  font-family: Arial, sans-serif;
+  background-color: #007bff;
+  margin: 10px;
 }
 
-h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
+/* Operations */
+.operation {
+  width: 120px;
+  height: 150px;
+  font-size: 19.2px;
 }
 
-p {
-  font-size: 16px;
-  line-height: 1.5;
+/* Media query voor mobiel & tablet */
+@media (max-width: 768px) {
+  header {
+    padding: 10px;
+  }
+  footer {
+    padding: 10px;
+  }
 }
-
-/* Stijlen voor links */
-a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Stijlen voor projectboxen */
-.project {
-  background-color: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
+/* Extends */
+.box2, .box1 {
+  border: 1px solid #ccc;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Toevoeging van schaduw */
+  padding: 10px;
+}
+
+.box1 {
+  background-color: #f8f8f8;
+}
+
+.box2 {
+  background-color: #fff;
+}
+
+/* @if, @elseif en @else */
+.number {
+  color: blue;
+}
+
+/* @for */
+.number1 {
+  font-size: 10px;
+}
+
+.number2 {
+  font-size: 20px;
+}
+
+.number3 {
+  font-size: 30px;
+}
+
+/* @each */
+.color-red {
+  background-color: red;
+}
+
+.color-green {
+  background-color: green;
+}
+
+.color-blue {
+  background-color: blue;
+}
+
+/* @while */
+.while-1 {
+  width: 50px;
+}
+
+.while-2 {
+  width: 100px;
+}
+
+.while-3 {
+  width: 150px;
+}
+
+.while-4 {
+  width: 200px;
 }/*# sourceMappingURL=Style.css.map */
